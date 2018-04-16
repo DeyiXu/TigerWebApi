@@ -17,7 +17,7 @@ TigerWebApi 是一个热插拔的API，实现了项目不停止的情况下对�
 
 `Tiger.Account` 处理和用户相关的业务，引用 `Tiger.WebApi.Core` 在类当中添加`Method`Attribute。继承`BaseMetchod`类或者实现`ITigerMethod`方法
 # 使用方法 ASP.NET Core
-1. 引用 `Tiger.WebApi.Core`
+1. 引用`Tiger.WebApi.Core`
 2. Startup > ConfigureServices 方法中添加
 ```cs
 services.SettingsTigerWebApi();
@@ -51,9 +51,9 @@ using (ITigerWebApiClient client = new DefaultTigerWebApiClient("http://localhos
 }
 ```
 # 请求协议
-![请求协议](https://github.com/DeyiXu/TigerWebApi/images/headers.png)
+![请求协议](https://github.com/DeyiXu/TigerWebApi/raw/master/images/headers.png)
 
-![请求参数](https://github.com/DeyiXu/TigerWebApi/images/values.png)
+![请求参数](https://github.com/DeyiXu/TigerWebApi/raw/master/images/values.png)
 
 # 开源协议
 [MIT](https://github.com/DeyiXu/TigerWebApi/blob/master/LICENSE)
