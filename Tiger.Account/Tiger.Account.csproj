@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>说明</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tiger.DAL\Tiger.DAL.csproj" />
+    <ProjectReference Include="..\Tiger.WebApi.Core\Tiger.WebApi.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27520.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi.Core", "Tiger.WebApi.Core\Tiger.WebApi.Core.csproj", "{DBDA41A2-8A31-4CF3-B5C5-DE98F37B6038}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.Test", "Tiger.Test\Tiger.Test.csproj", "{7E16C78F-1259-485C-97A9-37164ABC4D49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.DAL", "Tiger.DAL\Tiger.DAL.csproj", "{C0B7DD20-AB89-4785-B9BD-B374BCF93968}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{6A5B6788-70FA-49EF-8D26-B7A1E17ACE34}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi", "Tiger.WebApi\Tiger.WebApi.csproj", "{FA802B2F-868E-4CE5-9A0E-2E83437BD70E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi.Client", "Tiger.WebApi.Client\Tiger.WebApi.Client.csproj", "{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.Account", "Tiger.Account\Tiger.Account.csproj", "{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBDA41A2-8A31-4CF3-B5C5-DE98F37B6038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBDA41A2-8A31-4CF3-B5C5-DE98F37B6038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBDA41A2-8A31-4CF3-B5C5-DE98F37B6038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBDA41A2-8A31-4CF3-B5C5-DE98F37B6038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E16C78F-1259-485C-97A9-37164ABC4D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E16C78F-1259-485C-97A9-37164ABC4D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E16C78F-1259-485C-97A9-37164ABC4D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E16C78F-1259-485C-97A9-37164ABC4D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B7DD20-AB89-4785-B9BD-B374BCF93968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B7DD20-AB89-4785-B9BD-B374BCF93968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B7DD20-AB89-4785-B9BD-B374BCF93968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B7DD20-AB89-4785-B9BD-B374BCF93968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA802B2F-868E-4CE5-9A0E-2E83437BD70E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA802B2F-868E-4CE5-9A0E-2E83437BD70E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA802B2F-868E-4CE5-9A0E-2E83437BD70E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA802B2F-868E-4CE5-9A0E-2E83437BD70E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C0B7DD20-AB89-4785-B9BD-B374BCF93968} = {6A5B6788-70FA-49EF-8D26-B7A1E17ACE34}
+		{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC} = {6A5B6788-70FA-49EF-8D26-B7A1E17ACE34}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3372F69A-E7AE-4022-8D78-B03E0685591A}
+	EndGlobalSection
+EndGlobal
