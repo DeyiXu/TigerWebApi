@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/DeyiXu/TigerWebApi</PackageProjectUrl>
+    <PackageIconUrl>https://github.com/DeyiXu/TigerWebApi/raw/master/images/icon.ico</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/DeyiXu/TigerWebApi/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright>https://github.com/DeyiXu/TigerWebApi</Copyright>
+    <PackageTags>TigerWebApi</PackageTags>
+    <Authors>DeyiXu</Authors>
   </PropertyGroup>
 
   <ItemGroup>
