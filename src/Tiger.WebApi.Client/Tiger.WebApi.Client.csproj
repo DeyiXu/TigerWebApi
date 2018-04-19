@@ -8,6 +8,8 @@
     <PackageProjectUrl>https://github.com/DeyiXu/TigerWebApi</PackageProjectUrl>
     <PackageIconUrl>https://github.com/DeyiXu/TigerWebApi/raw/master/images/icon.ico</PackageIconUrl>
     <RepositoryType>TigerWebApiClient</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Version>1.0.0-alpha</Version>
   </PropertyGroup>
 
 </Project>
