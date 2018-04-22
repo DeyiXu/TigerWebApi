@@ -17,4 +17,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Tiger.WebApi.Core.Service\Tiger.WebApi.Core.Service.csproj" />
+  </ItemGroup>
+
 </Project>

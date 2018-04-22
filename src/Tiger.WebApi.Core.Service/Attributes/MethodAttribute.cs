@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Tiger.WebApi.Core.Attributes
+namespace Tiger.WebApi.Core.Service.Attributes
 {
     /// <summary>
     /// 方法属性

@@ -7,11 +7,12 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Tiger.WebApi.Core.Attributes;
 using Tiger.WebApi.Core.Constants;
 using Tiger.WebApi.Core.Extensions;
 using Tiger.WebApi.Core.Reflection;
 using Tiger.WebApi.Core.Result;
+using Tiger.WebApi.Core.Service;
+using Tiger.WebApi.Core.Service.Attributes;
 
 namespace Tiger.WebApi.Core
 {
@@ -26,7 +27,7 @@ namespace Tiger.WebApi.Core
         }
         async Task EchoLoop()
         {
-            _httpContext.Response.ContentType = "application/json";
+            _httpContext.Response.ContentType = CommonConstant.CONTENT_TYPE;
             ResultObject resultObject = new ResultObject();
             try
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using Tiger.WebApi.Core.Constants;
+using Tiger.WebApi.Core.Service;
 
 namespace Tiger.WebApi.Core.Reflection
 {

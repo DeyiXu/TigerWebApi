@@ -4,8 +4,9 @@ using System.IO;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
-using Tiger.WebApi.Core.Attributes;
 using Tiger.WebApi.Core.Constants;
+using Tiger.WebApi.Core.Service;
+using Tiger.WebApi.Core.Service.Attributes;
 
 namespace Tiger.WebApi.Core
 {

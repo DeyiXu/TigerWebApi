@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Tiger.WebApi.Core
+namespace Tiger.WebApi.Core.Service
 {
     public class BaseMetchod : ITigerMethod
     {

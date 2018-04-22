@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Tiger.WebApi.Core.Attributes;
+using Tiger.WebApi.Core.Service.Attributes;
 
 namespace Tiger.WebApi.Core.Result
 {

@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Tiger.WebApi.Client\Tiger.WebApi.Client.csproj" />
     <ProjectReference Include="..\Tiger.WebApi.Core\Tiger.WebApi.Core.csproj" />
+    <ProjectReference Include="..\Tiger.WebApi.Service.Queue\Tiger.WebApi.Service.Queue.csproj" />
   </ItemGroup>
 
 </Project>
