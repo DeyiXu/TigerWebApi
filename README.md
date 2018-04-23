@@ -18,6 +18,36 @@ TigerWebApi 是一个热插拔的API，实现了项目不停止的情况下对�
 `Tiger.Test` 测试Api和Client使用到的，有使用TigerWebApiClient方法
 
 `Tiger.Account` 处理和用户相关的业务，引用 `Tiger.WebApi.Core.Service` 在类当中添加`Method`Attribute。继承`BaseMetchod`类或者实现`ITigerMethod`方法
+
+# 使用方法 Docker
+```sh
+cd [path]/src
+docker-compose build
+docker run --name [my-tigerwebapi] -p [5000]:80 -v [/Users/kevin/DockerData/Packages]:/app/Packages -d tigerwebapi:latest
+```
+`[path]`:项目路径
+
+`[my-tigerwebapi]`:容器名字
+
+`[5000]`:外部映射端口
+
+`[/Users/kevin/DockerData/Packages]`:外部映射路径
+
+注：使用时去掉[]
+
+# 其他Docker例子
+```sh
+docker run --name my-tigerwebapi-1 -p 5001:80 -v /Users/kevin/DockerData/Packages:/app/Packages -d tigerwebapi:latest
+
+docker run --name my-tigerwebapi-2 -p 5002:80 -v /Users/kevin/DockerData/Packages:/app/Packages -d tigerwebapi:latest
+
+docker run --name my-tigerwebapi-3 -p 5003:80 -v /Users/kevin/DockerData/Packages:/app/Packages -d tigerwebapi:latest
+```
+运行多个容器映射同一个目录，实现更新
+
+使用Nginx为N个容器做负载均衡
+
+
 # 使用方法 ASP.NET Core
 1. 引用`Tiger.WebApi.Core`
 2. Startup > ConfigureServices 方法中添加

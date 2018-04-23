@@ -5,6 +5,4 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - "5000:80"
-    volumes:
-      - /Users/kevin/DockerData/Packages:/app/Packages
+      - "80"
