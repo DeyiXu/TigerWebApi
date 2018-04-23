@@ -7,9 +7,10 @@
     <PackageLicenseUrl>https://github.com/DeyiXu/TigerWebApi/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/DeyiXu/TigerWebApi</PackageProjectUrl>
     <PackageIconUrl>https://github.com/DeyiXu/TigerWebApi/raw/master/images/icon.ico</PackageIconUrl>
-    <RepositoryType>TigerWebApiClient</RepositoryType>
+    <RepositoryType></RepositoryType>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.0-alpha</Version>
+    <Version>1.0.1-alpha</Version>
+    <PackageTags>TigerWebApi</PackageTags>
   </PropertyGroup>
 
 </Project>

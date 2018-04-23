@@ -51,9 +51,6 @@ namespace Tiger.Test
             //    method.Invoke();
             //}
 
-            ITigerMethod method = new WebApi.Service.Queue.Pull(null);
-            Console.WriteLine(method.Invoke());
-
             //using (IModel channel = _conn.CreateModel())
             //{
             //    BasicGetResult result = channel.BasicGet("tiger.webapi.service.queue", true);

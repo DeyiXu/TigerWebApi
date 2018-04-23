@@ -9,13 +9,15 @@ TigerWebApi 是一个热插拔的API，实现了项目不停止的情况下对�
 # 介绍
 `Tiger.WebApi.Core` 是API处理的核心文件
 
+`Tiger.WebApi.Core.Service` 业务逻辑使用
+
 `Tiger.WebApi` 是基于ASP.NET Core 2.0 引用和配置了`Tiger.WebApi.Core`
 
 `Tiger.WebApi.Client` 是使用TigerWebApi的请求封装
 
 `Tiger.Test` 测试Api和Client使用到的，有使用TigerWebApiClient方法
 
-`Tiger.Account` 处理和用户相关的业务，引用 `Tiger.WebApi.Core` 在类当中添加`Method`Attribute。继承`BaseMetchod`类或者实现`ITigerMethod`方法
+`Tiger.Account` 处理和用户相关的业务，引用 `Tiger.WebApi.Core.Service` 在类当中添加`Method`Attribute。继承`BaseMetchod`类或者实现`ITigerMethod`方法
 # 使用方法 ASP.NET Core
 1. 引用`Tiger.WebApi.Core`
 2. Startup > ConfigureServices 方法中添加

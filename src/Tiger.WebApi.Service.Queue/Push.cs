@@ -1,9 +1,10 @@
-﻿using Tiger.WebApi.Core.Service.Attributes;
-using Tiger.WebApi.Core.Service;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 using RabbitMQ.Client;
+using System.Collections.Generic;
 using System.Text;
-using Newtonsoft.Json;
+using Tiger.WebApi.Core.Service;
+using Tiger.WebApi.Core.Service.Attributes;
+using Tiger.WebApi.Core.Service.Extensions;
 
 namespace Tiger.WebApi.Service.Queue
 {
@@ -19,6 +20,10 @@ namespace Tiger.WebApi.Service.Queue
 
         public override object Invoke()
         {
+            if (_args.IsNullOrEmpty())
+            {
+                return false;
+            }
             using (IModel channel = _conn.CreateModel())
             {
                 channel.QueueDeclareNoWait(QUEUE_KEY, true, false, false, null);
