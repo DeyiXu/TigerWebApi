@@ -52,7 +52,7 @@ docker run --name my-tigerwebapi-2 -p 5002:80 -v /Users/kevin/DockerData/Package
 
 docker run --name my-tigerwebapi-3 -p 5003:80 -v /Users/kevin/DockerData/Packages:/app/Packages -d undesoft/tigerwebapi:latest
 ```
-运行多个容器映射同一个目录，实现更新
+运行多个容器映射同一个目录,实现更新
 
 使用Nginx为N个容器做负载均衡
 
