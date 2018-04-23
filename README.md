@@ -22,8 +22,6 @@ TigerWebApi 是一个热插拔的API，实现了项目不停止的情况下对�
 # 使用方法 Docker
 ```sh
 docker pull undesoft/tigerwebapi
-#梯子出毛病了，没有push上去DockerHub临时使用
-docker pull 106.14.119.43:5000/tigerwebapi
 
 docker run --name my-tigerwebapi -p 5000:80 -v /Users/kevin/DockerData/Packages:/app/Packages -d undesoft/tigerwebapi:latest
 ```
@@ -31,7 +29,9 @@ docker run --name my-tigerwebapi -p 5000:80 -v /Users/kevin/DockerData/Packages:
 # 使用方法 编译Docker并使用
 ```sh
 cd [path]/src
+
 docker-compose build
+
 docker run --name [my-tigerwebapi] -p [5000]:80 -v [/Users/kevin/DockerData/Packages]:/app/Packages -d undesoft/tigerwebapi:latest
 ```
 `[path]`:项目路径
@@ -52,13 +52,13 @@ docker run --name my-tigerwebapi-2 -p 5002:80 -v /Users/kevin/DockerData/Package
 
 docker run --name my-tigerwebapi-3 -p 5003:80 -v /Users/kevin/DockerData/Packages:/app/Packages -d undesoft/tigerwebapi:latest
 ```
-运行多个容器映射同一个目录，实现更新
+运行多个容器映射同一个目录，实现更新
 
-使用Nginx为N个容器做负载均衡
+使用Nginx为N个容器做负载均衡
 
 
 # 使用方法 ASP.NET Core
-1. 引用`Tiger.WebApi.Core`
+1. 引用`Tiger.WebApi.Core`
 2. Startup > ConfigureServices 方法中添加
 ```cs
 services.SettingsTigerWebApi();
