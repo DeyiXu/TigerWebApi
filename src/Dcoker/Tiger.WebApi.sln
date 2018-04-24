@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27617.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.WebApi", "Tiger.WebApi\Tiger.WebApi.csproj", "{2803F7C0-E990-4306-B9BF-E7E098D1D1CA}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8522B121-ECAD-4F9E-957F-ED1821D1516D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2803F7C0-E990-4306-B9BF-E7E098D1D1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2803F7C0-E990-4306-B9BF-E7E098D1D1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2803F7C0-E990-4306-B9BF-E7E098D1D1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2803F7C0-E990-4306-B9BF-E7E098D1D1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8522B121-ECAD-4F9E-957F-ED1821D1516D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8522B121-ECAD-4F9E-957F-ED1821D1516D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8522B121-ECAD-4F9E-957F-ED1821D1516D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8522B121-ECAD-4F9E-957F-ED1821D1516D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24CA518F-CE1D-4A67-8E72-A615AA6D5535}
+	EndGlobalSection
+EndGlobal
