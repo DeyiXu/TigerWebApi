@@ -7,11 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Tiger.WebApi.Core.Service" Version="1.0.0-alpha" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Tiger.DAL\Tiger.DAL.csproj" />
-    <ProjectReference Include="..\Tiger.WebApi.Core.Service\Tiger.WebApi.Core.Service.csproj" />
+    <ProjectReference Include="..\Tiger.IDAL\Tiger.IDAL.csproj" />
   </ItemGroup>
 
 </Project>

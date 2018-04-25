@@ -17,4 +17,7 @@
     <ProjectReference Include="..\Tiger.WebApi.Core\Tiger.WebApi.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Packages\Account\Item.dll" />
+  </ItemGroup>
 </Project>

@@ -35,7 +35,9 @@ namespace Tiger.WebApi.Core.Reflection
 				Name = fileInfo.Directory.Name,
 				FileFullPath = fileFullName,
 				Directory = fileInfo.Directory.FullName,
-				Assembly = Assembly.Load(File.ReadAllBytes(fileFullName))
+				//Assembly = Assembly.Load(File.ReadAllBytes(fileFullName))
+				//Assembly = Assembly.LoadFile(fileFullName)
+				Assembly = Assembly.LoadFrom(fileFullName)
 			};
 			packageItem.AssemblyName = GetAssemblyName(packageItem.Assembly);
 			packageItem.Description = GetDescription(packageItem.Assembly);

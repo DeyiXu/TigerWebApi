@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TigerWebApiDemo.IDAL\TigerWebApiDemo.IDAL.csproj" />
+    <ProjectReference Include="..\TigerWebApiDemo.Entities\TigerWebApiDemo.Entities.csproj" />
   </ItemGroup>
-
 </Project>

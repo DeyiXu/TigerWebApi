@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TigerWebApiDemo.DAL\TigerWebApiDemo.DAL.csproj" />
-    <ProjectReference Include="..\TigerWebApiDemo.IDAL\TigerWebApiDemo.IDAL.csproj" />
   </ItemGroup>
 
 </Project>

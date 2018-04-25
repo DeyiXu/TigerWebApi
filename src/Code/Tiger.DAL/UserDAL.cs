@@ -1,12 +1,13 @@
 ﻿using System;
+using Tiger.IDAL;
 
 namespace Tiger.DAL
 {
-    public class UserDAL
-    {
-        public string GetUserName()
-        {
-            return "UserName";
-        }
-    }
+	public class UserDAL : IUserDAL
+	{
+		public string GetUserName()
+		{
+			return "UserName";
+		}
+	}
 }

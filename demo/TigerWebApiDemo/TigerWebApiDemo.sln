@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo.Entities", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo.Test", "TigerWebApiDemo.Test\TigerWebApiDemo.Test.csproj", "{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo", "TigerWebApiDemo\TigerWebApiDemo.csproj", "{D163A240-08E2-48DC-B06D-2B3170E420ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27520.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi.Core", "Tiger.WebApi.Core\Tiger.WebApi.Core.csproj", "{DBDA41A2-8A31-4CF3-B5C5-DE98F37B6038}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.WebApi.Core", "Tiger.WebApi.Core\Tiger.WebApi.Core.csproj", "{DBDA41A2-8A31-4CF3-B5C5-DE98F37B6038}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.Test", "Tiger.Test\Tiger.Test.csproj", "{7E16C78F-1259-485C-97A9-37164ABC4D49}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.Test", "Tiger.Test\Tiger.Test.csproj", "{7E16C78F-1259-485C-97A9-37164ABC4D49}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.DAL", "Tiger.DAL\Tiger.DAL.csproj", "{C0B7DD20-AB89-4785-B9BD-B374BCF93968}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.DAL", "Tiger.DAL\Tiger.DAL.csproj", "{C0B7DD20-AB89-4785-B9BD-B374BCF93968}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{6A5B6788-70FA-49EF-8D26-B7A1E17ACE34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi", "Tiger.WebApi\Tiger.WebApi.csproj", "{FA802B2F-868E-4CE5-9A0E-2E83437BD70E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.WebApi", "Tiger.WebApi\Tiger.WebApi.csproj", "{FA802B2F-868E-4CE5-9A0E-2E83437BD70E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi.Client", "Tiger.WebApi.Client\Tiger.WebApi.Client.csproj", "{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.WebApi.Client", "Tiger.WebApi.Client\Tiger.WebApi.Client.csproj", "{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.Account", "Tiger.Account\Tiger.Account.csproj", "{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.Account", "Tiger.Account\Tiger.Account.csproj", "{23E6B7B1-F1EB-417F-90E9-5F9B8198B3BC}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8209CFB4-91E5-493F-AE9A-D808B774CC36}"
 EndProject
@@ -29,7 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.WebApi.Core.Service",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{F015A69A-0714-4064-81E1-7F1FE34C7718}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi.Service.Queue", "Tiger.WebApi.Service.Queue\Tiger.WebApi.Service.Queue.csproj", "{17D5BF10-973A-4229-8F09-0938018F3402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.WebApi.Service.Queue", "Tiger.WebApi.Service.Queue\Tiger.WebApi.Service.Queue.csproj", "{17D5BF10-973A-4229-8F09-0938018F3402}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.IDAL", "Tiger.IDAL\Tiger.IDAL.csproj", "{0F1A80B3-59B7-4437-9743-3CB5C709CE91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{17D5BF10-973A-4229-8F09-0938018F3402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17D5BF10-973A-4229-8F09-0938018F3402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17D5BF10-973A-4229-8F09-0938018F3402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1A80B3-59B7-4437-9743-3CB5C709CE91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1A80B3-59B7-4437-9743-3CB5C709CE91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1A80B3-59B7-4437-9743-3CB5C709CE91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1A80B3-59B7-4437-9743-3CB5C709CE91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{3E45A36B-7E8A-4CA6-93F5-306E870BF504} = {8E5F8CBB-3629-4164-9CAC-72801C396740}
 		{F015A69A-0714-4064-81E1-7F1FE34C7718} = {8E5F8CBB-3629-4164-9CAC-72801C396740}
 		{17D5BF10-973A-4229-8F09-0938018F3402} = {E9B16D0E-BD72-4157-9CF2-0C04E5009897}
+		{0F1A80B3-59B7-4437-9743-3CB5C709CE91} = {6A5B6788-70FA-49EF-8D26-B7A1E17ACE34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3372F69A-E7AE-4022-8D78-B03E0685591A}
