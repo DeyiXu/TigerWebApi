@@ -56,11 +56,10 @@ namespace Tiger.WebApi.Core.Extensions
 					// 添加类
 					break;
 				case FileChangeType.Delete:
-					//
+					// 删除类
 					Common.RemoveService(fullPath);
 					break;
 			}
-			Console.WriteLine($"{type.ToString()}|{fullPath}");
 		}
 
 		public static IServiceCollection SettingsTigerWebApi(this IServiceCollection services)

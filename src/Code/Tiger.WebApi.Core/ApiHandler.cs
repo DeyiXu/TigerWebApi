@@ -129,7 +129,7 @@ namespace Tiger.WebApi.Core
 				foreach (Type type in item.Value.Assembly.GetExportedTypes())
 				{
 					MethodAttribute attr = (MethodAttribute)type.GetCustomAttribute(typeof(MethodAttribute));
-					if (attr != null)
+					if (attr != null && typeof(ITigerMethod).IsAssignableFrom(type))
 					{
 						packageInfo.Service.Add(attr);
 					}
@@ -184,7 +184,6 @@ namespace Tiger.WebApi.Core
 				string method = hc.Request.Headers[HeaderKeyConstant.REST_METHOD];
 				if (string.IsNullOrEmpty(method))
 					return;
-
 
 				try
 				{

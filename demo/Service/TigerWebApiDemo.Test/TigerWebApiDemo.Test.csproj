@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Tiger.WebApi.Client" Version="1.0.1-alpha" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TigerWebApiDemo.Account\TigerWebApiDemo.Account.csproj" />
   </ItemGroup>
 

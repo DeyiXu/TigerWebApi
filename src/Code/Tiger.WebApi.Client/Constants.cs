@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tiger.WebApi.Client
+﻿namespace Tiger.WebApi.Client
 {
     public sealed class Constants
     {

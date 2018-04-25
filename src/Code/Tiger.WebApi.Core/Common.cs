@@ -87,7 +87,7 @@ namespace Tiger.WebApi.Core
 			foreach (PackageItem packageItem in packageItems)
 			{
 				// 设置PackageItem(重复出现则会覆盖)
-				Global.PackageItem[packageItem.AssemblyName] = packageItem;
+				Global.PackageItem[packageItem.FileFullPath] = packageItem;
 
 				foreach (Type typeItem in packageItem.Assembly.GetExportedTypes())
 				{
@@ -96,23 +96,20 @@ namespace Tiger.WebApi.Core
 			}
 		}
 
-		public static void RemoveService(string itemFullPath)
+		public static void RemoveService(string key)
 		{
-			if (Global.PackageItem.ContainsKey(itemFullPath))
+			if (Global.PackageItem.ContainsKey(key))
 			{
-				PackageItem packageItem = Global.PackageItem[itemFullPath];
+				PackageItem packageItem = Global.PackageItem[key];
 				foreach (Type type in packageItem.Assembly.GetExportedTypes())
 				{
 					MethodAttribute attr = (MethodAttribute)type.GetCustomAttribute(typeof(MethodAttribute));
 					if (attr != null && typeof(ITigerMethod).IsAssignableFrom(type))
 					{
-						if (Global.Service.ContainsKey(attr.Name))
-						{
-							Global.Service.Remove(attr.Name);
-						}
+						Global.Service.Remove(attr.Name);
 					}
 				}
-				Global.PackageItem.Remove(itemFullPath);
+				Global.PackageItem.Remove(key);
 			}
 		}
 	}
