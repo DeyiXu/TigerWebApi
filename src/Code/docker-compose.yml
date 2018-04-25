@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  tiger.webapi:
-    image: ${DOCKER_REGISTRY}tigerwebapi
-    build:
-      context: .
-      dockerfile: Tiger.WebApi/Dockerfile

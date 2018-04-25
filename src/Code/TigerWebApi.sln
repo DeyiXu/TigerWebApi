@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi", "Tiger.WebAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tiger.WebApi.Client", "Tiger.WebApi.Client\Tiger.WebApi.Client.csproj", "{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8209CFB4-91E5-493F-AE9A-D808B774CC36}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApiGateway", "WebApiGateway", "{8E5F8CBB-3629-4164-9CAC-72801C396740}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApiGatewayService", "WebApiGatewayService", "{E9B16D0E-BD72-4157-9CF2-0C04E5009897}"
@@ -39,10 +37,6 @@ Global
 		{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B762798-7FBE-4FEA-846E-E5FEAE3AA966}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8209CFB4-91E5-493F-AE9A-D808B774CC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8209CFB4-91E5-493F-AE9A-D808B774CC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8209CFB4-91E5-493F-AE9A-D808B774CC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8209CFB4-91E5-493F-AE9A-D808B774CC36}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E45A36B-7E8A-4CA6-93F5-306E870BF504}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3E45A36B-7E8A-4CA6-93F5-306E870BF504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E45A36B-7E8A-4CA6-93F5-306E870BF504}.Release|Any CPU.ActiveCfg = Release|Any CPU
