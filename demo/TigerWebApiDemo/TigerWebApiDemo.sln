@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27617.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo.Account", "TigerWebApiDemo.Account\TigerWebApiDemo.Account.csproj", "{846C1A2B-D4F0-4EE8-A59D-6BDE5700CE10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerWebApiDemo.Account", "TigerWebApiDemo.Account\TigerWebApiDemo.Account.csproj", "{846C1A2B-D4F0-4EE8-A59D-6BDE5700CE10}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{525BE422-385E-450D-A23F-DE46E671B674}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basis", "Basis", "{1E4D85BF-457B-429E-BAE7-719BA6BD6A9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo.DAL", "TigerWebApiDemo.DAL\TigerWebApiDemo.DAL.csproj", "{2503AA22-FC1E-4B78-AAF8-AD7C6AA07B8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerWebApiDemo.DAL", "TigerWebApiDemo.DAL\TigerWebApiDemo.DAL.csproj", "{2503AA22-FC1E-4B78-AAF8-AD7C6AA07B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo.IDAL", "TigerWebApiDemo.IDAL\TigerWebApiDemo.IDAL.csproj", "{2C9E82CB-0AA7-4F6E-ABAB-D7F1137A05B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerWebApiDemo.IDAL", "TigerWebApiDemo.IDAL\TigerWebApiDemo.IDAL.csproj", "{2C9E82CB-0AA7-4F6E-ABAB-D7F1137A05B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo.Entities", "TigerWebApiDemo.Entities\TigerWebApiDemo.Entities.csproj", "{6FC5DAF2-1D65-43AC-8446-CA8407A9FAFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerWebApiDemo.Entities", "TigerWebApiDemo.Entities\TigerWebApiDemo.Entities.csproj", "{6FC5DAF2-1D65-43AC-8446-CA8407A9FAFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo.Test", "TigerWebApiDemo.Test\TigerWebApiDemo.Test.csproj", "{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TigerWebApiDemo", "TigerWebApiDemo\TigerWebApiDemo.csproj", "{D163A240-08E2-48DC-B06D-2B3170E420ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TigerWebApiDemo.Test", "TigerWebApiDemo.Test\TigerWebApiDemo.Test.csproj", "{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +43,6 @@ Global
 		{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68D5F9F5-29D7-40C0-A91C-7CBBC17844BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D163A240-08E2-48DC-B06D-2B3170E420ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
