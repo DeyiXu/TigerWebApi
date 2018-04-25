@@ -1,4 +1,8 @@
 ﻿{
+  "Server": {
+    "AppID": "10000",
+    "AppSecret": "qwerasdfzxcv"
+  },
   "RebbitMQ": {
     "UserName": "guest",
     "Password": "guest",

@@ -56,6 +56,8 @@ app.Map("/info", ApiHandler.Info);
 app.Map("/rest", ApiHandler.Map);
 ```
 # 配置介绍
+项目目录下的 `TigerWebApiConfig.json` 设置appKey和appSecret
+
 在项目根目录下有一个`Packages`文件夹，文件夹中有三个文件夹`Common`、`Server`、`Service`
 
 按照顺序发布`Common`=>`Server` / `Common`=>`Service`

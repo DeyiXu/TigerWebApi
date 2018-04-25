@@ -26,4 +26,10 @@
     <None Remove="Packages\Common\Tiger.IDAL\Tiger.IDAL.pdb" />
     <None Remove="Packages\Service\Tiger.Account.dll" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="TigerWebApiConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

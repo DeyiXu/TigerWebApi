@@ -11,5 +11,6 @@
 		public const string PACKAGE_SERVER_NAME = "Server";
 
 		public const string CONTENT_TYPE = "application/json";
+        public const string CONFIG_FILENAME = "TigerWebApiConfig.json";
 	}
 }
