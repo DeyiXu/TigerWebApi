@@ -1,5 +1,3 @@
-# 发现严重BUG,修复中
-
 # TigerWebApi 是什么？
 TigerWebApi 是一个热插拔的API，实现了项目不停止的情况下对项目API进行更新。
 
