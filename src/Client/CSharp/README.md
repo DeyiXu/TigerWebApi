@@ -10,7 +10,7 @@ Install-Package Tiger.WebApi.Client -Version 1.0.1-alpha
 
 string tigerAppID = "10000";
 string tigerAppSecret = "qwerasdfzxcv";
-string tigerApiUrl:"http://localhost:5000/rest";
+string tigerApiUrl = "http://localhost:5000/rest";
 
 IDictionary<string, string> args = new Dictionary<string, string>
 {
