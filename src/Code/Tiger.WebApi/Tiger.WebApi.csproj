@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Packages\Server\" />
     <Folder Include="wwwroot\" />
+    <Folder Include="Packages\Service\" />
+    <Folder Include="Packages\Common\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Packages\Account\Item.dll" />
+    <None Remove="Packages\Common\Newtonsoft.Json\Newtonsoft.Json.dll" />
+    <None Remove="Packages\Common\Tiger.IDAL\Tiger.IDAL.dll" />
+    <None Remove="Packages\Common\Tiger.IDAL\Tiger.IDAL.pdb" />
+    <None Remove="Packages\Service\Tiger.Account.dll" />
   </ItemGroup>
 </Project>

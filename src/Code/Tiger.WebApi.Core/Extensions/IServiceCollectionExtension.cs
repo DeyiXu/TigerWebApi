@@ -12,10 +12,33 @@ namespace Tiger.WebApi.Core.Extensions
 	{
 		static Assembly TigerResolveEventHandler(object sender, ResolveEventArgs args)
 		{
-			string fileName = args.Name.Split(',')[0];
-			string requestFileName = args.RequestingAssembly.ToString().Split(',')[0];
-			string responseDir = Global.PackageItem[requestFileName].Directory;
-			return Assembly.Load(File.ReadAllBytes(Path.Combine(responseDir, $"{fileName}.dll")));
+			string[] nameSplit = args.Name.Split(',');
+			string fileName = nameSplit[0].Trim();
+			string version = nameSplit[1].Replace("Version=", "").Trim();
+
+			string filePath = Path.Combine(Environment.CurrentDirectory, CommonConstant.PACKAGE_NAME, CommonConstant.PACKAGE_COMMON_NAME, fileName, $"{fileName}-{version}.dll");
+			if (!File.Exists(filePath))
+			{
+				filePath = Path.Combine(Environment.CurrentDirectory, CommonConstant.PACKAGE_NAME, CommonConstant.PACKAGE_COMMON_NAME, fileName, $"{fileName}-1.0.0.0.dll");
+				if (!File.Exists(filePath))
+				{
+					filePath = Path.Combine(Environment.CurrentDirectory, CommonConstant.PACKAGE_NAME, CommonConstant.PACKAGE_COMMON_NAME, fileName, $"{fileName}.dll");
+					if (!File.Exists(filePath))
+					{
+						throw new Exception($"未找到文件:{fileName}.dll");
+					}
+				}
+			}
+
+			if (Global.Assembly.ContainsKey(filePath))
+			{
+				return Global.Assembly[filePath];
+			}
+			else
+			{
+				Global.Assembly.Add(filePath, Assembly.Load(File.ReadAllBytes(filePath)));
+				return Global.Assembly[filePath];
+			}
 		}
 
 		static void FileWatcherChanged(FileChangeType type, string fullPath)
@@ -43,13 +66,27 @@ namespace Tiger.WebApi.Core.Extensions
 		public static IServiceCollection SettingsTigerWebApi(this IServiceCollection services)
 		{
 			#region 验证文件夹
+
 			string packagePath = Path.Combine(Environment.CurrentDirectory, CommonConstant.PACKAGE_NAME);
 			if (!Directory.Exists(packagePath))
 				Directory.CreateDirectory(packagePath);
+
+			string[] dirs = {
+				CommonConstant.PACKAGE_COMMON_NAME,
+				CommonConstant.PACKAGE_SERVICE_NAME,
+				CommonConstant.PACKAGE_SERVER_NAME
+			};
+
+			for (int i = 0; i < dirs.Length; i++)
+			{
+				string dirPath = Path.Combine(packagePath, dirs[i]);
+				if (!Directory.Exists(dirPath))
+					Directory.CreateDirectory(dirPath);
+			}
 			#endregion
 
 			#region 设置PackageItem
-			PackageItem[] packageItems = AssemblyHelper.GetPackageItems(packagePath);
+			PackageItem[] packageItems = AssemblyHelper.GetPackageItems(Path.Combine(packagePath, CommonConstant.PACKAGE_SERVICE_NAME));
 
 			foreach (PackageItem packageItem in packageItems)
 			{
@@ -73,7 +110,7 @@ namespace Tiger.WebApi.Core.Extensions
 			#endregion
 
 			#region 监听文件
-			FileWatcher fileWatcher = new FileWatcher(Path.Combine(Environment.CurrentDirectory, CommonConstant.PACKAGE_NAME));
+			FileWatcher fileWatcher = new FileWatcher(Path.Combine(Environment.CurrentDirectory, CommonConstant.PACKAGE_NAME, CommonConstant.PACKAGE_SERVICE_NAME));
 			fileWatcher.Changed += FileWatcherChanged;
 			fileWatcher.Run();
 			#endregion

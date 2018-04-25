@@ -42,9 +42,10 @@ namespace Tiger.WebApi.Core.IO
             _watcher = new FileSystemWatcher(_path)
             {
                 // 包含子目录
-                IncludeSubdirectories = true,
+                IncludeSubdirectories = false,
                 // 启用
                 EnableRaisingEvents = true,
+                Filter = "*.dll"
             };
 
             _watcher.Created += new FileSystemEventHandler(CreatedEvent);
@@ -81,47 +82,25 @@ namespace Tiger.WebApi.Core.IO
         /// <param name="e"></param>
         private void CreatedEvent(object sender, FileSystemEventArgs e)
         {
-            string path = "";
-            // 文件夹
-            if (!VerifyNotPackagePath(e.FullPath) && FileHelper.IsDirectory(e.FullPath))
-            {
-                path = Path.Combine(e.FullPath, CommonConstant.PACKAGE_ITEM);
-                if (!File.Exists(path))
-                    return;
-            }
-            // 文件
-            else if (VerifyNotPackagePath(e.FullPath))
-            {
-                FileInfo fileInfo = new FileInfo(e.FullPath);
-                path = Path.Combine(fileInfo.DirectoryName, CommonConstant.PACKAGE_ITEM);
-
-                if (!File.Exists(path))
-                    return;
-            }
-            else
-            {
-                return;
-            }
-
-            DateTime currFileLastUpdateTime = File.GetLastWriteTime(path);
+            DateTime currFileLastUpdateTime = File.GetLastWriteTime(e.FullPath);
             // 解决重复事件问题
-            if (_fileLastUpdateTime.ContainsKey(path))
+            if (_fileLastUpdateTime.ContainsKey(e.FullPath))
             {
-                if (currFileLastUpdateTime == _fileLastUpdateTime[path])
+                if (currFileLastUpdateTime == _fileLastUpdateTime[e.FullPath])
                 {
                     return;
                 }
                 else
                 {
-                    _fileLastUpdateTime[path] = currFileLastUpdateTime;
+                    _fileLastUpdateTime[e.FullPath] = currFileLastUpdateTime;
                 }
             }
             else
             {
-                _fileLastUpdateTime.Add(path, currFileLastUpdateTime);
+                _fileLastUpdateTime.Add(e.FullPath, currFileLastUpdateTime);
             }
 
-            Changed?.Invoke(FileChangeType.Create, path);
+            Changed?.Invoke(FileChangeType.Create, e.FullPath);
         }
         /// <summary>
         /// 文件删除事件
@@ -130,25 +109,18 @@ namespace Tiger.WebApi.Core.IO
         /// <param name="e"></param>
         private void DeletedEvent(object sender, FileSystemEventArgs e)
         {
+            if (_fileLastUpdateTime.ContainsKey(e.FullPath))
+            {
+                _fileLastUpdateTime.Remove(e.FullPath);
+            }
             foreach (var item in Global.PackageItem)
             {
-                if (item.Value.Directory.Equals(e.FullPath))
+                if (item.Value.FileFullPath.Equals(e.FullPath))
                 {
-                    Changed?.Invoke(FileChangeType.Delete, Path.Combine(e.FullPath, CommonConstant.PACKAGE_ITEM));
+                    Changed?.Invoke(FileChangeType.Delete, e.FullPath);
                     return;
                 }
             }
-            FileInfo fileInfo = new FileInfo(e.FullPath);
-            string path = Path.Combine(fileInfo.DirectoryName, CommonConstant.PACKAGE_ITEM);
-            if (fileInfo.FullName.Equals(path))
-            {
-                if (_fileLastUpdateTime.ContainsKey(path))
-                {
-                    _fileLastUpdateTime.Remove(path);
-                }
-                Changed?.Invoke(FileChangeType.Delete, path);
-            }
-
         }
         /// <summary>
         /// 文件修改事件
@@ -157,34 +129,25 @@ namespace Tiger.WebApi.Core.IO
         /// <param name="e"></param>
         private void ChangedEvent(object sender, FileSystemEventArgs e)
         {
-            if (!VerifyNotPackagePath(e.FullPath))
-                return;
-
-            FileInfo fileInfo = new FileInfo(e.FullPath);
-            string path = Path.Combine(fileInfo.DirectoryName, CommonConstant.PACKAGE_ITEM);
-
-            if (!File.Exists(path))
-                return;
-
-            DateTime currFileLastUpdateTime = File.GetLastWriteTime(path);
+            DateTime currFileLastUpdateTime = File.GetLastWriteTime(e.FullPath);
             // 解决重复出发Change事件问题
-            if (_fileLastUpdateTime.ContainsKey(path))
+            if (_fileLastUpdateTime.ContainsKey(e.FullPath))
             {
-                if (currFileLastUpdateTime == _fileLastUpdateTime[path])
+                if (currFileLastUpdateTime == _fileLastUpdateTime[e.FullPath])
                 {
                     return;
                 }
                 else
                 {
-                    _fileLastUpdateTime[path] = currFileLastUpdateTime;
+                    _fileLastUpdateTime[e.FullPath] = currFileLastUpdateTime;
+                    Changed?.Invoke(FileChangeType.Update, e.FullPath);
                 }
             }
             else
             {
-                _fileLastUpdateTime.Add(path, currFileLastUpdateTime);
+                _fileLastUpdateTime.Add(e.FullPath, currFileLastUpdateTime);
+                Changed?.Invoke(FileChangeType.Update, e.FullPath);
             }
-
-            Changed?.Invoke(FileChangeType.Update, e.FullPath);
         }
         /// <summary>
         /// 文件重名事件
@@ -193,43 +156,24 @@ namespace Tiger.WebApi.Core.IO
         /// <param name="e"></param>
         private void RenamedEvent(object sender, RenamedEventArgs e)
         {
-            if (FileHelper.IsDirectory(e.FullPath))
+            if (_fileLastUpdateTime.ContainsKey(e.OldFullPath))
             {
-                string oldPath = Path.Combine(e.OldFullPath, CommonConstant.PACKAGE_ITEM);
-                if (_fileLastUpdateTime.ContainsKey(oldPath))
-                {
-                    _fileLastUpdateTime.Remove(oldPath);
-                }
-                string path = Path.Combine(e.FullPath, CommonConstant.PACKAGE_ITEM);
-                Changed?.Invoke(FileChangeType.Delete, oldPath);
+                _fileLastUpdateTime.Remove(e.OldFullPath);
+                Changed?.Invoke(FileChangeType.Delete, e.OldFullPath);
+                return;
+            }
 
-                if (!File.Exists(path))
-                    return;
-
-                Changed?.Invoke(FileChangeType.Create, path);
+            DateTime currFileLastUpdateTime = File.GetLastWriteTime(e.FullPath);
+            if (!_fileLastUpdateTime.ContainsKey(e.FullPath))
+            {
+                _fileLastUpdateTime.Add(e.FullPath, currFileLastUpdateTime);
             }
             else
             {
-                FileInfo fileInfo = new FileInfo(e.FullPath);
-                string path = Path.Combine(fileInfo.DirectoryName, CommonConstant.PACKAGE_ITEM);
-                // 如果是 Item 移除
-                if (!fileInfo.Name.Equals(CommonConstant.PACKAGE_ITEM))
-                {
-                    if (_fileLastUpdateTime.ContainsKey(path))
-                    {
-                        _fileLastUpdateTime.Remove(path);
-                    }
-                    Changed?.Invoke(FileChangeType.Delete, path);
-                }
-                else
-                {
-                    if (_fileLastUpdateTime.ContainsKey(fileInfo.DirectoryName))
-                    {
-                        _fileLastUpdateTime[fileInfo.DirectoryName] = File.GetLastWriteTime(path);
-                    }
-                    Changed?.Invoke(FileChangeType.Update, path);
-                }
+                _fileLastUpdateTime[e.FullPath] = currFileLastUpdateTime;
             }
+
+            Changed?.Invoke(FileChangeType.Update, e.FullPath);
         }
         #endregion
     }

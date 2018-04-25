@@ -12,7 +12,6 @@ namespace Tiger.WebApi.Core
         [JsonProperty]
         public string AssemblyName { get; set; }
         public string FileFullPath { get; set; }
-        public string Directory { get; set; }
         [JsonProperty]
         public string Description { get; set; }
     }

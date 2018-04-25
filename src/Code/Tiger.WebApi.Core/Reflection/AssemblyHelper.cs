@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Tiger.WebApi.Core.Constants;
 using Tiger.WebApi.Core.Service;
 
 namespace Tiger.WebApi.Core.Reflection
@@ -34,10 +33,7 @@ namespace Tiger.WebApi.Core.Reflection
 			{
 				Name = fileInfo.Directory.Name,
 				FileFullPath = fileFullName,
-				Directory = fileInfo.Directory.FullName,
-				//Assembly = Assembly.Load(File.ReadAllBytes(fileFullName))
-				//Assembly = Assembly.LoadFile(fileFullName)
-				Assembly = Assembly.LoadFrom(fileFullName)
+				Assembly = Assembly.Load(File.ReadAllBytes(fileFullName))
 			};
 			packageItem.AssemblyName = GetAssemblyName(packageItem.Assembly);
 			packageItem.Description = GetDescription(packageItem.Assembly);
@@ -46,14 +42,14 @@ namespace Tiger.WebApi.Core.Reflection
 		public static PackageItem[] GetPackageItems(string dir)
 		{
 			DirectoryInfo dirInfo = new DirectoryInfo(dir);
-			DirectoryInfo[] subDirs = dirInfo.GetDirectories();
+			FileInfo[] fileInfos = dirInfo.GetFiles("*.dll");
+
 			List<PackageItem> packageItems = new List<PackageItem>();
-			foreach (var dirItem in subDirs)
+			foreach (FileInfo fileInfo in fileInfos)
 			{
-				string fileFullName = Path.Combine(dirItem.FullName, CommonConstant.PACKAGE_ITEM);
-				if (File.Exists(fileFullName))
+				if (File.Exists(fileInfo.FullName))
 				{
-					packageItems.Add(GetPackageItem(fileFullName, true));
+					packageItems.Add(GetPackageItem(fileInfo.FullName, true));
 				}
 			}
 			return packageItems.ToArray();
