@@ -6,19 +6,6 @@ TigerWebApi 是一个热插拔的API，实现了项目不停止的情况下对�
 
 >`ASP.NET Core 2.0`
 
-# 介绍
-`Tiger.WebApi.Core` 是API处理的核心文件
-
-`Tiger.WebApi.Core.Service` 业务逻辑使用
-
-`Tiger.WebApi` 是基于ASP.NET Core 2.0 引用和配置了`Tiger.WebApi.Core`
-
-`Tiger.WebApi.Client` 是使用TigerWebApi的请求封装
-
-`Tiger.Test` 测试Api和Client使用到的，有使用TigerWebApiClient方法
-
-`Tiger.Account` 处理和用户相关的业务，引用 `Tiger.WebApi.Core.Service` 在类当中添加`Method`Attribute。继承`BaseMetchod`类或者实现`ITigerMethod`方法
-
 # 使用方法 Docker
 ```sh
 docker pull undesoft/tigerwebapi
@@ -58,7 +45,7 @@ docker run --name my-tigerwebapi-3 -p 5003:80 -v /Users/kevin/DockerData/Package
 
 
 # 使用方法 ASP.NET Core
-1. 引用`Tiger.WebApi.Core`
+1. 引用 [Tiger.WebApi.Core](https://www.nuget.org/packages/Tiger.WebApi.Core/)
 2. Startup > ConfigureServices 方法中添加
 ```cs
 services.SettingsTigerWebApi();
@@ -68,38 +55,56 @@ services.SettingsTigerWebApi();
 app.Map("/info", ApiHandler.Info);
 app.Map("/rest", ApiHandler.Map);
 ```
-4. 启动项目
-5. 如🌰（例子）`Tiger.Account`,发布后`\bin\Debug\netstandard2.0`对文件进行重命名`Tiger.Account.dll|.pdb`>`Item.dll|.pdb`（*.deps.json可以删除）。
+# 配置介绍
+在项目根目录下有一个`Packages`文件夹，文件夹中有三个文件夹`Common`、`Server`、`Service`
 
-在WebApi下的Packages中新建任意文件夹可以以`Tiger.Account`命名，复制刚刚修改好的Item等其他文件到`Tiger.Account`文件夹中。
+按照顺序发布`Common`=>`Server` / `Common`=>`Service`
 
-WebApi会自动加载,打开浏览器输入`http://localhost:5000/info`就能看到API信息。
+如：有以下几个已发布文件
+`Newtonsoft.Json.dll`
 
-`Tiger.Test` 项目中有封装好的调用方式
-```cs
-IDictionary<string, string> dic = new Dictionary<string, string>
-{
-    { "v", "v1" },
-    { "k2", "k2" },
-    { "k3", "k3" },
-    { "k4", "k4" }
-};
+`Tiger.WebApi.Core.Service.dll`
 
-using (ITigerWebApiClient client = new DefaultTigerWebApiClient("http://localhost:5000/rest", "10000", "qwerasdfzxcv"))
-{
-    var content = client.Execute("tiger.service.account.getname", dic);
-    Console.WriteLine(content);
-}
-```
-# 请求协议
-![请求协议](https://github.com/DeyiXu/TigerWebApi/raw/master/images/headers.png)
+`TigerWebApiDemo.IDAL.dll`
 
-![请求参数](https://github.com/DeyiXu/TigerWebApi/raw/master/images/values.png)
+`TigerWebApiDemo.DAL.dll`
+
+`TigerWebApiDemo.Entities.dll`
+
+>`Common`:通用引用包
+
+规则：
+
+在新添加一引用包的时候需要根据包的`命名空间`(Newtonsoft.Json)来新建一个文件夹(Newtonsoft.Json)。
+确保dll文件名要和文件夹名称一样，针对于不同的版本可以用`Newtonsoft.Json-2.0.0.0.dll`(命名空间-[版本号].dll)，在程序引用过程中会先去查找程序需要的版本dll文件，如果找不到。默认回去查找`Newtonsoft.Json-1.0.0.0.dll`版本的dll，还是找不到会去使用``Newtonsoft.Json.dll``，再找不到则程序会抛出异常信息。
+
+`Tiger.WebApi.Core.Service.dll`
+
+`TigerWebApiDemo.IDAL.dll`
+
+`TigerWebApiDemo.DAL.dll`
+
+`TigerWebApiDemo.Entities.dll`
+
+则使用同样的方法
+
+>`Server`:服务器引用包(针对于Api的升级)
+
+针对于后期`Tiger.WebApi.Core`需要的功能
+
+>`Service`:服务层引用包(也就是引用`Tiger.WebApi.Core.Service`)
+
+复制已发布好的dll `TigerWebApiDemo.Account.dll`到当前目录下即可
 
 # 客户端使用示例
 [C#](https://github.com/DeyiXu/TigerWebApi/tree/master/src/Client/CSharp)
 
 [微信小程序](https://github.com/DeyiXu/TigerWebApi/tree/master/src/Client/WeChat)
+
+## 请求协议
+![请求协议](https://github.com/DeyiXu/TigerWebApi/raw/master/images/headers.png)
+
+![请求参数](https://github.com/DeyiXu/TigerWebApi/raw/master/images/values.png)
 
 # 开源协议
 [MIT](https://github.com/DeyiXu/TigerWebApi/blob/master/LICENSE)
