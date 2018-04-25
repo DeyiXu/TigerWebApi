@@ -96,8 +96,10 @@ using (ITigerWebApiClient client = new DefaultTigerWebApiClient("http://localhos
 
 ![请求参数](https://github.com/DeyiXu/TigerWebApi/raw/master/images/values.png)
 
-# 客户端调用方法
-[微信小程序](https://github.com/DeyiXu/TigerWebApi/tree/master/src/Client/WeChat/README.md)
+# 客户端使用示例
+[C#](https://github.com/DeyiXu/TigerWebApi/tree/master/src/Client/CSharp)
+
+[微信小程序](https://github.com/DeyiXu/TigerWebApi/tree/master/src/Client/WeChat)
 
 # 开源协议
 [MIT](https://github.com/DeyiXu/TigerWebApi/blob/master/LICENSE)

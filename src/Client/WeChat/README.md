@@ -1,6 +1,16 @@
-# 微信小程序使用实例
+# 微信小程序使用示例
 
 ![引用结构](https://github.com/DeyiXu/TigerWebApi/raw/master/images/wechat-util.png)
+
+修改文件Constants.js中的参数
+
+```js
+const obj = {
+  tigerAppID: '10000',
+  tigerAppSecret: 'qwerasdfzxcv',
+  tigerApiUrl:'http://localhost:53613/rest'
+}
+```
 
 ```js
 // 引用包
