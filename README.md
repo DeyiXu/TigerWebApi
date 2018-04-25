@@ -56,9 +56,9 @@ app.Map("/info", ApiHandler.Info);
 app.Map("/rest", ApiHandler.Map);
 ```
 # 配置介绍
-项目目录下的 `TigerWebApiConfig.json` 设置appKey和appSecret
+项目目录下的 `TigerWebApiConfig.json` 设置appKey和appSecret
 
-在项目根目录下有一个`Packages`文件夹，文件夹中有三个文件夹`Common`、`Server`、`Service`
+在项目根目录下有一个`Packages`文件夹，文件夹中有三个文件夹`Common`、`Server`、`Service`
 
 按照顺序发布`Common`=>`Server` / `Common`=>`Service`
 
@@ -77,7 +77,7 @@ app.Map("/rest", ApiHandler.Map);
 
 规则：
 
-在新添加一引用包的时候需要根据包的`命名空间`(Newtonsoft.Json)来新建一个文件夹(Newtonsoft.Json)。
+在新添加一引用包的时候需要根据包的`命名空间`(Newtonsoft.Json)来新建一个文件夹(Newtonsoft.Json)。
 确保dll文件名要和文件夹名称一样，针对于不同的版本可以用`Newtonsoft.Json-2.0.0.0.dll`(命名空间-[版本号].dll)，在程序引用过程中会先去查找程序需要的版本dll文件，如果找不到。默认回去查找`Newtonsoft.Json-1.0.0.0.dll`版本的dll，还是找不到会去使用``Newtonsoft.Json.dll``，再找不到则程序会抛出异常信息。
 
 `Tiger.WebApi.Core.Service.dll`

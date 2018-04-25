@@ -8,7 +8,7 @@
     <Copyright>https://github.com/DeyiXu/TigerWebApi</Copyright>
     <PackageTags>TigerWebApi</PackageTags>
     <Authors>DeyiXu</Authors>
-    <Version>1.0.3-alpha</Version>
+    <Version>1.0.4-alpha</Version>
   </PropertyGroup>
 
   <ItemGroup>
