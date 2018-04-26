@@ -4,5 +4,6 @@ services:
   tiger.webapi:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - TIGERWEBAPI_PACKAGE_WATCHER=Thread
     ports:
       - "80"

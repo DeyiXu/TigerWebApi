@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  tiger.webapi:
+    image: tigerwebapi_debug
+    build:
+      context: .
+      dockerfile: Tiger.WebApi/Dockerfile

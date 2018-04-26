@@ -7,7 +7,7 @@ namespace Tiger.WebApi.Core.IO
 	/// <summary>
 	/// 文件监听
 	/// </summary>
-	public class FileWatcher
+	public class FileWatcher : IFileWatcher
 	{
 		readonly string _path;
 		FileSystemWatcher _watcher = null;
@@ -46,10 +46,10 @@ namespace Tiger.WebApi.Core.IO
 				Filter = "*.dll"
 			};
 
-			_watcher.Created += new FileSystemEventHandler(CreatedEvent);
-			_watcher.Deleted += new FileSystemEventHandler(DeletedEvent);
-			_watcher.Changed += new FileSystemEventHandler(ChangedEvent);
-			_watcher.Renamed += new RenamedEventHandler(RenamedEvent);
+			_watcher.Created += CreatedEvent;
+			_watcher.Deleted += DeletedEvent;
+			_watcher.Changed += ChangedEvent;
+			_watcher.Renamed += RenamedEvent;
 
 			_fileLastUpdateTime = new Dictionary<string, DateTime>();
 

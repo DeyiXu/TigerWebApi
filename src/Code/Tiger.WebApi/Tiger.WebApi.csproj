@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,6 +25,7 @@
     <None Remove="Packages\Common\Tiger.IDAL\Tiger.IDAL.dll" />
     <None Remove="Packages\Common\Tiger.IDAL\Tiger.IDAL.pdb" />
     <None Remove="Packages\Service\Tiger.Account.dll" />
+    <None Remove=".DS_Store" />
   </ItemGroup>
 
   <ItemGroup>
