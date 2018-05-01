@@ -13,7 +13,7 @@ namespace Tiger.WebApi.Core.IO
     {
         readonly string _path;
         Thread _thread = null;
-        readonly SyncDictionary<string, string> _fileDic = new SyncDictionary<string, string>();
+        readonly SyncDictionary<string, long> _fileDic = new SyncDictionary<string, long>();
         public ThreadFileWatcher(string path)
         {
             if (!Directory.Exists(path))
@@ -51,16 +51,17 @@ namespace Tiger.WebApi.Core.IO
             IsWatch = false;
         }
 
-        private string GetFileHash(string filePath)
+        private long GetFileHash(string filePath)
         {
-            MD5 md5 = MD5.Create();
-            byte[] bytes = md5.ComputeHash(File.ReadAllBytes(filePath));
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < bytes.Length; i++)
-            {
-                result.Append(bytes[i].ToString("X2"));
-            }
-            return result.ToString();
+            //MD5 md5 = MD5.Create();
+            //byte[] bytes = md5.ComputeHash(File.ReadAllBytes(filePath));
+            //StringBuilder result = new StringBuilder();
+            //for (int i = 0; i < bytes.Length; i++)
+            //{
+            //    result.Append(bytes[i].ToString("X2"));
+            //}
+            //return result.ToString();
+            return File.GetLastWriteTime(filePath).ToFileTimeUtc();
         }
 
         private FileInfo[] GetFileInfos(string path)
@@ -73,7 +74,7 @@ namespace Tiger.WebApi.Core.IO
         {
             while (IsWatch)
             {
-                Thread.CurrentThread.Join(10000);
+                Thread.CurrentThread.Join(1000);
 
                 string[] keys1 = _fileDic.Keys.ToArray();
                 string[] keys2 = GetFileInfos(_path).Select(s => s.FullName).ToArray();
@@ -86,8 +87,8 @@ namespace Tiger.WebApi.Core.IO
                 for (int i = 0; i < containsKey.Length; i++)
                 {
                     string fullName = containsKey[i];
-                    string hash = GetFileHash(fullName);
-                    if (!_fileDic[fullName].Equals(hash))
+                    long hash = GetFileHash(fullName);
+                    if (_fileDic[fullName] != hash)
                     {
                         _fileDic[fullName] = hash;
                         Changed?.Invoke(FileChangeType.Update, fullName);
